@@ -4,13 +4,13 @@
 A module providing a simple Jasper Server Client
 
 ___
-# Instalación
+# Install
 
 ```bash
   npm install jasper-node-client --save
 ```
 
-# Configuración
+# Configuration
 
 An object with the following structure is require (you can put it in your application config file):
 ```javascript
