@@ -1,0 +1,36 @@
+{
+  "name": "jasper-node-client",
+  "version": "1.0.0",
+  "description": "Simple Jasper Server Client",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc/js"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "grunt-contrib-yuidoc": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "jasper",
+    "reports",
+    "jasper-server",
+    "webservice",
+    "jasper client"
+  ],
+  "author": "Maykol Purica <puricamaykol@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "node-rest-client": "^2.0.1"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "http://git.sigis.com.ve/mpurica/jasper-node-client.git"
+  }
+}
