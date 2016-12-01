@@ -3,12 +3,12 @@
    baseUrl: '',
    userName: '',
    password: '',
-   headers: { authorization: 'Basic amFzcGVyYWRtaW46amFzcGVyYWRtaW4=', accept: 'application/json' }
+   headers: { authorization: '', accept: 'application/json' }
  }
  const Jasper = require('jasper-node-client')(config)
  var jasper = new Jasper()
- var reportPath = 'reports/PatrullajeInteligente/Informes/'
- var reportName = 'BitacoraTelefono'
+ var reportPath = ''
+ var reportName = 'ExampleName'
  var fileFormat = 'pdf'
  var params = {
    fec_ini: '2016-11-01%2000:00:00',
