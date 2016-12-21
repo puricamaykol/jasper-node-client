@@ -11,7 +11,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "JasperClient",
             "name": "JasperClient",
-            "description": "Modulo que envuelve la clase JasperClient. Recibe por parametro un objeto obj = {baseUrl: '', userName: '', password: ''}"
+            "description": "Modulo que envuelve la clase JasperClient. Recibe por parametro un objeto obj = {baseUrl: '', userName: '', password: '', headers: {}}"
         }
     ],
     "elements": []

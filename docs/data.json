@@ -1,20 +1,13 @@
 {
     "project": {
-        "name": "jasper_report_node_client",
-        "description": "Cliente de Jasper Report que permite consumir el servicio de Jasper Server",
+        "name": "jasper-node-client",
+        "description": "Simple Jasper Server Client",
         "version": "1.0.0",
         "url": ""
     },
     "files": {
-        "src/js/Base64Encoder/Base64Encoder.js": {
-            "name": "src/js/Base64Encoder/Base64Encoder.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "src/js/RestClient/RestClient.js": {
-            "name": "src/js/RestClient/RestClient.js",
+        "lib/RestClient/RestClient.js": {
+            "name": "lib/RestClient/RestClient.js",
             "modules": {},
             "classes": {
                 "RestClient": 1
@@ -22,8 +15,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/js/JasperClient.js": {
-            "name": "src/js/JasperClient.js",
+        "lib/JasperClient.js": {
+            "name": "lib/JasperClient.js",
             "modules": {
                 "JasperClient": 1
             },
@@ -46,20 +39,27 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/js/JasperClient.js",
-            "line": 13,
-            "description": "Modulo que envuelve la clase JasperClient. Recibe por parametro un objeto obj = {baseUrl: '', userName: '', password: ''}",
+            "file": "lib/JasperClient.js",
+            "line": 14,
+            "description": "Modulo que envuelve la clase JasperClient. Recibe por parametro un objeto obj = {baseUrl: '', userName: '', password: '', headers: {}}",
             "params": [
                 {
                     "name": "config",
-                    "description": "Los parametros basicos para el consumo del servicio. obj = {baseUrl: '', userName: '', password: ''}",
+                    "description": "Los parametros basicos para el consumo del servicio. obj = {baseUrl: '', userName: '', password: '', headers: {}}",
                     "type": "Object"
                 }
             ],
             "return": {
-                "description": "[description]",
-                "type": "[type]"
-            }
+                "description": "Retorna el objeto instanciable de la clase JasperClient",
+                "type": "Object"
+            },
+            "todo": [
+                "DUcktyping para validar que existan los atributos baseUrl",
+                "userName",
+                "password y headers y que sean del tipo adecuado.",
+                "Mejorar el manejo de errores"
+            ],
+            "author": "Maykol Purica <puricamaykol@gmail.com>"
         }
     },
     "classes": {
@@ -72,9 +72,10 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "JasperClient",
-            "file": "src/js/RestClient/RestClient.js",
+            "file": "lib/RestClient/RestClient.js",
             "line": 2,
-            "description": "Class RestClient Esta clase es un adaptador generico para un cliente REST, solo se usa el metodo get que es el necesario para hacer la peticion"
+            "description": "Class RestClient Esta clase es un adaptador generico para un cliente REST, solo se usa el metodo get que es el necesario para hacer la peticion",
+            "author": "Maykol Purica <puricamaykol@gmail.com>"
         },
         "JasperClient": {
             "name": "JasperClient",
@@ -86,33 +87,23 @@
             "extension_for": [],
             "module": "JasperClient",
             "namespace": "",
-            "file": "src/js/JasperClient.js",
-            "line": 13,
-            "description": "Esta clase es un cliente que permite consumir la API RESTful de Jasper Reports."
+            "file": "lib/JasperClient.js",
+            "line": 14,
+            "description": "Esta clase es un cliente que permite consumir la API RESTful de Jasper Reports.",
+            "author": "Maykol Purica <puricamaykol@gmail.com>"
         }
     },
     "elements": {},
     "classitems": [
         {
-            "file": "src/js/Base64Encoder/Base64Encoder.js",
-            "line": 3,
-            "description": "Esta funcion hace las veces de adaptador para la funcion btoa",
-            "params": [
-                {
-                    "name": "string",
-                    "description": "[description]",
-                    "type": "[type]"
-                }
-            ],
-            "return": {
-                "description": "[description]",
-                "type": "[type]"
-            },
+            "file": "lib/RestClient/RestClient.js",
+            "line": 7,
+            "description": "Forma de uso\nvar headers = {  accept: 'application/json',\n                             authorization: 'Bearer 0bd1b7385e90634bc9d9c92b84380722fa00f8f4' }\n            var rest = new restClient(\"http://webserver2a-local:9201/\", headers)\n            var success = function (data, response) {\n                            // parsed response body as js object\n                            console.log(data, \"parsed response body as js object\")\n                            // raw response\n                            //console.log(response)\n                        }\n            var params = { idFleet: '',\n                             idSubFleet: '',\n                             idVehicle: '',\n                             iniDate: '2015-10-16',\n                             endDate: '2016-11-07' }",
             "class": "RestClient"
         },
         {
-            "file": "src/js/RestClient/RestClient.js",
-            "line": 27,
+            "file": "lib/RestClient/RestClient.js",
+            "line": 25,
             "description": "Constructor de la clase RestClient.",
             "itemtype": "method",
             "name": "constructor",
@@ -131,8 +122,8 @@
             "class": "RestClient"
         },
         {
-            "file": "src/js/RestClient/RestClient.js",
-            "line": 41,
+            "file": "lib/RestClient/RestClient.js",
+            "line": 39,
             "description": "Metodo que envia una peticion GET con los parametros pasados",
             "itemtype": "method",
             "name": "get",
@@ -169,34 +160,11 @@
             "class": "RestClient"
         },
         {
-            "file": "src/js/JasperClient.js",
-            "line": 46,
-            "class": "JasperClient",
-            "module": "JasperClient"
-        },
-        {
-            "file": "src/js/JasperClient.js",
-            "line": 50,
+            "file": "lib/JasperClient.js",
+            "line": 45,
             "description": "Constructor de la clase.",
             "itemtype": "method",
             "name": "constructor",
-            "params": [
-                {
-                    "name": "baseUrl",
-                    "description": "Url basea usar en los servicios",
-                    "type": "String"
-                },
-                {
-                    "name": "username",
-                    "description": "Nombre de usuario de Jasper",
-                    "type": "String"
-                },
-                {
-                    "name": "password",
-                    "description": "Clave de acceso de Jasper",
-                    "type": "String"
-                }
-            ],
             "return": {
                 "description": "",
                 "type": "Void"
@@ -205,8 +173,8 @@
             "module": "JasperClient"
         },
         {
-            "file": "src/js/JasperClient.js",
-            "line": 74,
+            "file": "lib/JasperClient.js",
+            "line": 66,
             "description": "Metodo que genera el reporte",
             "itemtype": "method",
             "name": "requestReport",
@@ -245,8 +213,8 @@
             "module": "JasperClient"
         },
         {
-            "file": "src/js/JasperClient.js",
-            "line": 112,
+            "file": "lib/JasperClient.js",
+            "line": 91,
             "description": "Metodo que construye las cabezeras a ser enviadas con el archivo",
             "itemtype": "method",
             "name": "getResponseHeaders",
@@ -277,12 +245,8 @@
     ],
     "warnings": [
         {
-            "message": "Missing item type\nEsta funcion hace las veces de adaptador para la funcion btoa",
-            "line": " src/js/Base64Encoder/Base64Encoder.js:3"
-        },
-        {
-            "message": "Missing item type",
-            "line": " src/js/JasperClient.js:46"
+            "message": "Missing item type\nForma de uso\nvar headers = {  accept: 'application/json',\n                             authorization: 'Bearer 0bd1b7385e90634bc9d9c92b84380722fa00f8f4' }\n            var rest = new restClient(\"http://webserver2a-local:9201/\", headers)\n            var success = function (data, response) {\n                            // parsed response body as js object\n                            console.log(data, \"parsed response body as js object\")\n                            // raw response\n                            //console.log(response)\n                        }\n            var params = { idFleet: '',\n                             idSubFleet: '',\n                             idVehicle: '',\n                             iniDate: '2015-10-16',\n                             endDate: '2016-11-07' }",
+            "line": " lib/RestClient/RestClient.js:7"
         }
     ]
 }

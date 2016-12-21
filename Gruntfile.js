@@ -6,7 +6,14 @@ grunt.initConfig({
     // this way we can use things like name and version (pkg.name)
     pkg: grunt.file.readJSON('package.json'),
 
-
+    // -------------------------------------
+        eslint: {
+            options: {
+                config: 'eslint.json',
+                reset: true
+            },
+            target: ['lib/**/*.js']
+        },
     // -------------------------------------
    
     yuidoc: {
@@ -16,9 +23,9 @@ grunt.initConfig({
         version: '<%= pkg.version %>',
         url: '<%= pkg.homepage %>',
         options: {
-          paths: 'src/js/',
+          paths: 'lib',
          // themedir: 'path/to/custom/theme/',
-          outdir: 'doc/js/'
+          outdir: 'docs'
         }
       }
     }
@@ -26,9 +33,10 @@ grunt.initConfig({
 });
 
     grunt.loadNpmTasks('grunt-contrib-yuidoc');
+    grunt.loadNpmTasks('grunt-eslint');
 
      grunt.registerTask('default', [
+     	  "eslint",
         "yuidoc"
     ]);
 };
-
